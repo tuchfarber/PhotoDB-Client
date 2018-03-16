@@ -1,0 +1,9 @@
+version: '3.0'
+services:
+  app:
+    build: ./
+    container_name: photodb.frontend
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./src/:/code/

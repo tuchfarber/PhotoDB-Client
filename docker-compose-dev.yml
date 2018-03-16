@@ -1,0 +1,7 @@
+version: '3.0'
+services:
+  app:
+    image: tuchfarber/photodb_frontend:dev
+    ports:
+      - "8080:8080"
+    entrypoint: npm run dev
