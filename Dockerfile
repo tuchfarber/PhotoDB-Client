@@ -6,3 +6,4 @@ COPY /src/package.json /code/package.json
 COPY /src/package-lock.json /code/package-lock.json
 WORKDIR /code/
 RUN npm install
+COPY /src/ /code/

@@ -5,5 +5,3 @@ services:
     container_name: photodb.frontend
     stdin_open: true
     tty: true
-    volumes:
-      - ./src/:/code/
