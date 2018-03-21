@@ -39,9 +39,9 @@ export class Photo{
     static continueSearch(){
         if(store.state.next_url){
             // Force HTTPS when page is served over HTTPS
-            if(location.protocol == 'https:' && this.next_url.slice(0, 5) != 'https'){
-                url_start = this.next_url.indexOf('://') + 3
-                this.next_url = 'https://' + this.next_url.slice(url_start)
+            if(location.protocol == 'https:'){
+                next_url = store.state.next_url.replace('http://', 'https://')
+                store.commit('setNextURL', next_url)
             }
             CustomAPI.get(store.state.next_url).then( data => {
                 let photos = data.data.results.map( photo => new Photo(photo));
