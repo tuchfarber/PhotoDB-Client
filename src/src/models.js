@@ -40,7 +40,7 @@ export class Photo{
         if(store.state.next_url){
             // Force HTTPS when page is served over HTTPS
             if(location.protocol == 'https:'){
-                next_url = store.state.next_url.replace('http://', 'https://')
+                let next_url = store.state.next_url.replace('http://', 'https://')
                 store.commit('setNextURL', next_url)
             }
             CustomAPI.get(store.state.next_url).then( data => {
